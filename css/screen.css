@@ -625,13 +625,17 @@ input::placeholder {
     ---
     Class to put on all input="text" like form inputs
 */
+.has-error {
+  --label-color: var(--global-color-error);
+  --input-borderColor: var(--global-input-error-borderColor);
+}
 
 .c-input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  border: 1px solid var(--global-input-borderColor);
+  border: var(--global-borderWidth) solid var(--input-borderColor, var(--global-input-borderColor));
   /* border: 1px solid var(--global-color-neutral-xxx-light); */
   border-radius: var(--global-borderRadius);
   background-color: var(--global-input-backgroundColor);
@@ -683,7 +687,7 @@ more padding on the right to avoid overlap
   padding-bottom: var(--global-whitespace-sm);
   font-size: 14px;
   line-height: 16px;
-  color: var(--label-color);
+  color: var(--label-color, var(--global-color-neutral-xx-dark));
 }
 
 .c-label--option {
